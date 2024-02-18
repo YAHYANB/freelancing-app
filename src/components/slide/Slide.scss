@@ -1,0 +1,30 @@
+.slide {
+  // display: flex;
+  // justify-content: center;
+  // gap: 20px;
+
+
+  .container {
+    position: relative;
+
+    .nextArrow{
+      font-size: 50px;
+
+    }
+    .slick-prev,
+    .slick-next {
+      color: black;
+      font-size: 50px;
+    }
+
+    .slick-prev:hover,
+    .slick-next:hover {
+      color: blue;
+      
+    }
+  }
+
+
+
+
+}
