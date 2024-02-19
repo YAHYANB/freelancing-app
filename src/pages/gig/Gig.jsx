@@ -1,7 +1,20 @@
 import "./Gig.scss";
-import { Slider } from "infinite-react-carousel/lib";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { MdOutlineArrowBackIos } from "react-icons/md";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 function Gig() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow : <MdOutlineArrowForwardIos clasName="nextArrow" />,
+    prevArrow : <MdOutlineArrowBackIos clasName="prevArrow" />
+  };
   return (
     <div className="gig">
       <div className="container">
@@ -24,20 +37,20 @@ function Gig() {
               <span>5</span>
             </div>
           </div>
-          <Slider slidesToShow={1} arrowsScroll={1} className="slider">
+          {/* <Slider {...settings} className="slider"> */}
             <img
               src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
-            <img
+            {/* <img
               src="https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
             <img
               src="https://images.pexels.com/photos/1054777/pexels-photo-1054777.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
-            />
-          </Slider>
+            /> */}
+          {/* </Slider> */}
           <h2>About This Gig</h2>
           <p>
             I use an AI program to create images based on text prompts. This

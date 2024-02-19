@@ -9,8 +9,9 @@
     h1 {
       width: max-content;
       margin-bottom: 30px;
-      color: gray;
-      font-weight: 300;
+      color: rgb(100, 100, 100);
+      font-weight: 400;
+      font-size: xx-large;
     }
 
     .sections {
@@ -19,7 +20,7 @@
       gap: 100px;
 
       label {
-        color: gray;
+        color: rgb(112, 112, 112);
         font-size: 18px;
       }
 
@@ -35,6 +36,8 @@
         select,
         textarea {
           padding: 20px;
+          border: 1px rgb(196, 196, 196) solid;
+          border-radius: 3px;
         }
 
         button {
@@ -45,6 +48,11 @@
           font-size: 18px;
           background-color: #1dbf73;
           cursor: pointer;
+          border-radius: 3px;
+        }
+        button:hover{
+          background-color: lighten($color: #1dbf73, $amount: 5%);
+          transition: all .3s ease;
         }
       }
     }
