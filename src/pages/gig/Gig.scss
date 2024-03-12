@@ -3,8 +3,7 @@
   justify-content: center;
 
   .container {
-    width: 1400px;
-    padding: 30px 0px;
+    margin: 0 30px;
     display: flex;
     gap: 50px;
 
@@ -13,6 +12,26 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      .slide {
+        width: 700px;
+
+        .slick-prev,
+        .slick-next {
+          color: rgb(72, 42, 42);
+          background-color: rgb(214, 241, 241);
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          padding: 4px;
+          z-index: 99;
+        }
+
+        .slick-prev:hover,
+        .slick-next:hover {
+          background-color: #ffffff;
+        }
+      }
 
       .breadcrumbs {
         font-weight: 300;
@@ -58,14 +77,8 @@
             color: #ffc108;
           }
         }
-      }
 
-      .slider {
-        background-color: #F5F5F5;
-        img {
-          max-height: 500px;
-          object-fit: contain;
-        }
+
       }
 
       h2 {
@@ -161,14 +174,17 @@
 
       .reviews {
         margin-top: 50px;
+
         .item {
           display: flex;
           flex-direction: column;
           gap: 20px;
           margin: 20px 0px;
+
           .user {
             display: flex;
             align-items: center;
+
             .pp {
               height: 50px;
               width: 50px;
@@ -223,7 +239,7 @@
     }
 
     .right {
-      flex: 1;
+      flex: 1;  
       border: 1px solid lightgray;
       padding: 20px;
       border-radius: 5px;
@@ -235,21 +251,63 @@
       position: sticky;
       top: 150px;
 
+      .packs {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin: 0px 6px;
+
+
+        .packsDiv{
+          cursor: pointer;
+          width: 90px;
+
+        .line {
+          width: 80px;
+          height: 2px;
+          background-color: #ffc108;
+          transition: all .3s ease;
+        }
+        .actve-line {
+          width: 25px;
+          background-color: #dedede;
+        }
+        // &:hover {
+        //   .line {
+        //     width: 25px;
+        //     background-color: #dedede;
+        //   }
+        // }
+      }
+
+        h2 {
+          padding-left: 6px;
+        }
+      }
+      .packages {
+
+        .active-div {
+          display: show;
+        }
+        .hidde {
+          display: none;
+        }
+        
       .price {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        h2{
+        h2 {
           font-weight: 300;
         }
 
-        h3{
+        h3 {
           font-weight: 500;
         }
       }
 
-      p{
+      p {
         color: gray;
         margin: 10px 0px;
       }
@@ -271,8 +329,8 @@
         }
       }
 
-      .features{
-        .item{
+      .features {
+        .item {
           display: flex;
           align-items: center;
           gap: 10px;
@@ -280,13 +338,14 @@
           color: gray;
           margin-bottom: 5px;
 
-          img{
+          img {
             width: 14px;
           }
         }
       }
+      }
 
-      button{
+      button {
         background-color: #1dbf73;
         padding: 10px;
         color: white;

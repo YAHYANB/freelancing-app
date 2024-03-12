@@ -2,19 +2,29 @@ import "./Gig.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { MdOutlineArrowBackIos } from "react-icons/md";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { gigs, imgs } from "../../data";
+import Slide from "../../components/slide/Slide";
+import ProjectCard from "../../components/projectCard/ProjectCard";
+import { MdArrowBack } from "react-icons/md";
+import { IoArrowForward } from "react-icons/io5";
+import { useState } from "react";
+
 
 function Gig() {
+  const [toggleClassName, setToggleClasName] = useState(1)
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow : <MdOutlineArrowForwardIos clasName="nextArrow" />,
-    prevArrow : <MdOutlineArrowBackIos clasName="prevArrow" />
+    nextArrow: <IoArrowForward clasName="nextArrow" />,
+    prevArrow: <MdArrowBack clasName="prevArrow" />
   };
+
+  const changePack = (num) => {
+    setToggleClasName(num)
+  }
   return (
     <div className="gig">
       <div className="container">
@@ -37,20 +47,20 @@ function Gig() {
               <span>5</span>
             </div>
           </div>
-          {/* <Slider {...settings} className="slider"> */}
+          <Slider {...settings} className='slide'>
             <img
               src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
-            {/* <img
+            <img
               src="https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
             />
             <img
               src="https://images.pexels.com/photos/1054777/pexels-photo-1054777.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
-            /> */}
-          {/* </Slider> */}
+            />
+          </Slider>
           <h2>About This Gig</h2>
           <p>
             I use an AI program to create images based on text prompts. This
@@ -249,40 +259,134 @@ function Gig() {
           </div>
         </div>
         <div className="right">
-          <div className="price">
-            <h3>1 AI generated image</h3>
-            <h2>$ 59.99</h2>
-          </div>
-          <p>
-            I will create a unique high quality AI generated image based on a
-            description that you give me
-          </p>
-          <div className="details">
-            <div className="item">
-              <img src="/img/clock.png" alt="" />
-              <span>2 Days Delivery</span>
+          <div className="packs">
+            <div className="packsDiv" onClick={() => changePack(1)}>
+              <h2>Simple</h2>
+              <div className={toggleClassName === 1 ? 'actve-line' : 'line'}></div>
             </div>
-            <div className="item">
-              <img src="/img/recycle.png" alt="" />
-              <span>3 Revisions</span>
+            <div className="packsDiv" onClick={() => changePack(2)}>
+              <h2>Standard</h2>
+              <div className={toggleClassName === 2 ? 'actve-line' : 'line'}></div>
+            </div>
+            <div className="packsDiv" onClick={() => changePack(3)}>
+              <h2>Premium</h2>
+              <div className={toggleClassName === 3 ? 'actve-line' : 'line'}></div>
             </div>
           </div>
-          <div className="features">
-            <div className="item">
-              <img src="/img/greencheck.png" alt="" />
-              <span>Prompt writing</span>
+          <div className="packages">
+            <div className={toggleClassName === 1 ? 'active-div' : 'hidde'}>
+              <div className="price">
+                <h3>1 AI generated image</h3>
+                <h2>$ 59.99</h2>
+              </div>
+              <p>
+                I will create a unique high quality AI generated image based on a
+                description that you give me
+              </p>
+              <div className="details">
+                <div className="item">
+                  <img src="/img/clock.png" alt="" />
+                  <span>2 Days Delivery</span>
+                </div>
+                <div className="item">
+                  <img src="/img/recycle.png" alt="" />
+                  <span>3 Revisions</span>
+                </div>
+              </div>
+              <div className="features">
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Prompt writing</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Artwork delivery</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Image upscaling</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Additional design</span>
+                </div>
+              </div>
             </div>
-            <div className="item">
-              <img src="/img/greencheck.png" alt="" />
-              <span>Artwork delivery</span>
+            <div className={toggleClassName === 2 ? 'active-div' : 'hidde'}>
+              <div className="price">
+                <h3>2 AI generated image</h3>
+                <h2>$ 59.99</h2>
+              </div>
+              <p>
+                I will create a unique high quality AI generated image based on a
+                description that you give me
+              </p>
+              <div className="details">
+                <div className="item">
+                  <img src="/img/clock.png" alt="" />
+                  <span>2 Days Delivery</span>
+                </div>
+                <div className="item">
+                  <img src="/img/recycle.png" alt="" />
+                  <span>3 Revisions</span>
+                </div>
+              </div>
+              <div className="features">
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Prompt writing</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Artwork delivery</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Image upscaling</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Additional design</span>
+                </div>
+              </div>
             </div>
-            <div className="item">
-              <img src="/img/greencheck.png" alt="" />
-              <span>Image upscaling</span>
-            </div>
-            <div className="item">
-              <img src="/img/greencheck.png" alt="" />
-              <span>Additional design</span>
+            <div className={toggleClassName === 3 ? 'active-div' : 'hidde'}>
+              <div className="price">
+                <h3>3 AI generated image</h3>
+                <h2>$ 59.99</h2>
+              </div>
+              <p>
+                I will create a unique high quality AI generated image based on a
+                description that you give me
+              </p>
+              <div className="details">
+                <div className="item">
+                  <img src="/img/clock.png" alt="" />
+                  <span>2 Days Delivery</span>
+                </div>
+                <div className="item">
+                  <img src="/img/recycle.png" alt="" />
+                  <span>3 Revisions</span>
+                </div>
+              </div>
+              <div className="features">
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Prompt writing</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Artwork delivery</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Image upscaling</span>
+                </div>
+                <div className="item">
+                  <img src="/img/greencheck.png" alt="" />
+                  <span>Additional design</span>
+                </div>
+              </div>
             </div>
           </div>
           <button>Continue</button>

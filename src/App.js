@@ -13,6 +13,8 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import Payment from "./pages/payments/Payment";
+import MyProfile from "./pages/myProfile/MyProfile";
 
 function App() {
   const Layout = () => {
@@ -62,6 +64,15 @@ function App() {
           path: "/gig/:id",
           element: <Gig />,
         },
+        {
+          path: "/payment",
+          element: <Payment />
+        },
+        {
+          path: "/MyProfile",
+          element: <MyProfile />
+        }
+        
       ],
     },
     {
@@ -72,6 +83,7 @@ function App() {
       path: "/login",
       element: <Login />,
     },
+
   ]);
 
   return <RouterProvider router={router} />;

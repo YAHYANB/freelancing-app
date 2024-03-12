@@ -27,7 +27,7 @@ function Navbar() {
   const currentUser = 
   {
     id: 1,
-    username: "Anna",
+    username: "Hafid",
     isSeller: true,
   };
 
@@ -54,7 +54,7 @@ function Navbar() {
         {currentUser ? (
           <div className="user" onClick={() => setOpen(!open)}>
             <img
-              src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+              src="https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg" 
               alt=""
             />
             <span>{currentUser?.username}</span>
@@ -74,6 +74,12 @@ function Navbar() {
               </Link>
               <Link className="link" to="/messages">
                 Messages
+              </Link>
+              <Link className="link" to="/payment">
+                Payments
+              </Link>
+              <Link className="link" to="/MyProfile">
+                Profile
               </Link>
               <Link className="link" to="/">
                 Logout
